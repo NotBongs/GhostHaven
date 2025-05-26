@@ -12,7 +12,8 @@ body {
   background: var(--bg-dark) url('images/background.jpg') no-repeat center center fixed;
   background-size: cover;
   color: var(--text-light);
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 
 canvas#dust {
