@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Server Wiki</title>
+  <link rel="stylesheet" href="wiki.css" />
+  <script src="wiki-data.js"></script>
+  <script src="script.js" defer></script>
+
+</head>
+<body>
+  <canvas id="dust"></canvas>
+  <div class="overlay"></div>
+
+  <aside class="wiki-sidebar">
+    <div class="wiki-logo">
+      <img id="logo" src="images/Logo.gif" alt="Server Logo" />
+      <h1>Server Wiki</h1>
+    </div>
+    <nav class="wiki-nav">
+      <a href="#commands" class="active">Commands</a>
+      <a href="#mobs">Custom Mobs</a>
+      <a href="#features">Gameplay Features</a>
+      <a href="#items">Custom Items</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+  </aside>
+
+  <main class="wiki-main">
+    <section id="commands" class="wiki-section">
+      <h2>Commands</h2>
+      <table class="wiki-table">
+        <thead>
+          <tr>
+            <th class="title-header">Commands</th>
+            <th class="description-header">Description</th>
+          </tr>
+        </thead>
+        <tbody id="commands-body"></tbody>
+      </table>
+    </section>
+
+    <section id="mobs" class="wiki-section">
+      <h2>Custom Mobs</h2>
+      <table class="wiki-table">
+        <thead>
+          <tr>
+            <th class="title-header">Name</th>
+            <th class="description-header">Description</th>
+          </tr>
+        </thead>
+        <tbody id="mobs-body"></tbody>
+      </table>
+    </section>
+
+    <section id="features" class="wiki-section">
+      <h2>Gameplay Features</h2>
+      <table class="wiki-table">
+        <thead>
+          <tr>
+            <th class="title-header">Feature</th>
+            <th class="description-header">Description</th>
+          </tr>
+        </thead>
+        <tbody id="features-body"></tbody>
+      </table>
+    </section>
+
+    <section id="items" class="wiki-section">
+      <h2>Custom Items</h2>
+      <table class="wiki-table">
+        <thead>
+          <tr>
+            <th class="title-header">Item</th>
+            <th class="description-header">Description</th>
+          </tr>
+        </thead>
+        <tbody id="items-body"></tbody>
+      </table>
+    </section>
+
+    <section id="faq" class="wiki-section">
+      <h2>FAQ</h2>
+      <div id="faq-container" class="faq-container"></div>
+    </section>
+  </main>
+
+  <script>
+    const navLinks = document.querySelectorAll('.wiki-nav a');
+    navLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.forEach(l => l.classList.remove('active'));
+        link.classList.add('active');
+      });
+    });
+
+    // Load JSON data and populate sections
+    fetch('wiki-data.json')
+      .then(response => response.json())
+      .then(data => {
+        const fillTable = (sectionId, items) => {
+          const tbody = document.getElementById(sectionId);
+          if (tbody) {
+            tbody.innerHTML = items.map(item => `
+              <tr>
+                <td class="title">${item.title}</td>
+                <td class="description">${item.description}</td>
+              </tr>`).join('');
+          }
+        };
+
+        fillTable('commands-body', data.commands);
+        fillTable('mobs-body', data.mobs);
+        fillTable('features-body', data.features);
+        fillTable('items-body', data.items);
+
+        const faqContainer = document.getElementById('faq-container');
+        faqContainer.innerHTML = data.faq.map(f => `
+          <div class="faq-item">
+            <h3>${f.question}</h3>
+            <p>${f.answer}</p>
+          </div>`).join('');
+      })
+      .catch(error => console.error('Failed to load wiki data:', error));
+  </script>
+</body>
+</html>

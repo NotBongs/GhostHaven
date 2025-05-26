@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Your Minecraft Server</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <canvas id="dust"></canvas>
+  <div class="overlay"></div>
+
+  <header>
+    <div class="logo-title">
+      <h1>🔥 Ghost Haven</h1>
+      <img id="logo" src="images/Logo.gif" alt="Server Logo" />
+    </div>
+    <p>Tired Of The Same Old Minecraft? Dive Into A World Where Stunning Terrain, Revamped Structures, And Powerful Custom Mobs Redefine Survival. Grind Your Way Through Unique Jobs, Collect Adorable Pets, Unlock Stylish Cosmetics, And Rise Through The Ranks. Battle It Out In PvP, Gear Up With Custom Enchantments, And Build Safely With Grief Protection In Place.
+It’s Vanilla, But With A Pulse</p>
+    <div>
+      <button class="btn" onclick="copyIP(this)">Copy IP</button>
+      <button class="btn" onclick="DiscordLink()">Discord</button>
+      <button class="btn" onclick="goToWiki()">Wiki</button>
+    </div>
+    <div class="ip-box" id="server-ip">MC.GhostHaven.net</div>
+  </header>
+
+  <section class="features-section">
+  <h2 class="features-header">Features</h2>
+  <div class="features-box">
+    <ul>
+      <li><span>✔</span> Custom Minecraft Worlds</li>
+      <li><span>✔</span> Friendly Community</li>
+      <li><span>✔</span> 24/7 Uptime & Stability</li>
+      <li><span>✔</span> Exclusive Events & Contests</li>
+      <li><span>✔</span> Custom Plugins & Economy</li>
+      <li><span>✔</span> Anti-Cheat & Grief Protection</li>
+    </ul>
+  </div>
+</section>
+
+  <footer>
+    &copy; 2025 Your Minecraft Server. All rights reserved.
+  </footer>
+  
+</body>
+</html>
