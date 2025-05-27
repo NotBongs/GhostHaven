@@ -79,6 +79,38 @@ window.addEventListener('DOMContentLoaded', () => {
   populateFAQ(wikiData.faq);
 });
 
+async function fetchServerStatus() {
+  const ip = "vexius.org"; // Replace with your actual IP/domain
+  const url = `https://api.mcsrvstat.us/2/${ip}`;
+
+  try {
+    const res = await fetch(url);
+    const data = await res.json();
+
+    const statusBox = document.getElementById("server-status");
+
+    if (!data.online) {
+      statusBox.innerHTML = "❌ Server is Offline";
+      statusBox.style.background = "linear-gradient(135deg, #6a0000, #a40000)";
+    } else {
+      const players = data.players?.online || 0;
+      const maxPlayers = data.players?.max || "N/A";
+      statusBox.innerHTML = `Online: ${players} / ${maxPlayers} Ghosts`;
+      statusBox.style.background = "linear-gradient(135deg, var(--accent-start), var(--accent-end))";
+    }
+  } catch (error) {
+    console.error("Error fetching status:", error);
+    const statusBox = document.getElementById("server-status");
+    statusBox.innerHTML = "⚠️ Unable to fetch server status";
+    statusBox.style.background = "linear-gradient(135deg, #444, #222)";
+  }
+}
+
+window.addEventListener("DOMContentLoaded", () => {
+  fetchServerStatus();
+  // setInterval(fetchServerStatus, 30000); // Optional refresh every 30s
+});
+
 // Particles
 const canvas = document.getElementById("dust");
 const ctx = canvas.getContext("2d");

@@ -68,6 +68,67 @@ p {
   color: var(--text-muted);
 }
 
+.ip-status-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1.5rem;
+  z-index: 3;
+  position: relative;
+}
+
+.ip-box {
+  font-size: 1.3rem;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 1rem 2rem;
+  border-radius: 12px;
+  display: inline-block;
+  backdrop-filter: blur(4px);
+  text-align: center;
+  width: 280px;
+  max-width: 90%;
+}
+
+.status-logo {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  flex-shrink: 0;
+  /*box-shadow: 0 0 10px rgba(253, 171, 12, 0.4);*/
+}
+
+.status-wrapper {
+  display: flex;
+  align-items: center;
+  background: #1e1e1e; /* Flat dark background */
+  border-radius: 12px;
+  padding: 0.8rem 1.2rem;
+  gap: 12px;
+  box-shadow: 0 0 20px rgba(253, 171, 12, 0.2);
+  border: 2px solid #fdab0c;
+  margin-top: 1rem;
+  width: fit-content;
+  max-width: 100%;
+  flex-wrap: nowrap;
+
+  /* Remove any inherited background gradient */
+  background-image: none !important;
+}
+
+.status-box {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-light);
+  white-space: nowrap;
+  background: none !important; /* Kill gradient */
+  background-image: none !important;
+}
+
+.status-wrapper:hover {
+  box-shadow: 0 0 35px rgba(253, 171, 12, 0.8);
+}
+
 .btn {
   padding: 0.8rem 2rem;
   font-size: 1.1rem;
