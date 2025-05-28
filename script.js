@@ -18,7 +18,7 @@ function DiscordLink() {
 }
 
 function goToWiki() {
-  window.location.href = 'wiki.html';
+  window.location.href = '/wiki/';
 }
 
 function setupLogoClick() {
@@ -27,7 +27,7 @@ function setupLogoClick() {
 
   logo.style.cursor = 'pointer'; // change cursor to clickable
   logo.addEventListener('click', () => {
-    window.location.href = 'index.html'; // redirect to homepage
+    window.location.href = '/'; // redirect to homepage
   });
 }
 
