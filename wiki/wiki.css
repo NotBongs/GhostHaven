@@ -205,37 +205,53 @@ canvas#dust {
 }
 
 /* ===== Responsive ===== */
-@media (max-width: 700px) {
+@media (max-width: 768px) {
   body {
     flex-direction: column;
   }
-  /* Sidebar fixed */
-.wiki-sidebar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 260px;
-  height: 100vh;
-  padding: 20px;
-  background-color: #111;
-  border-right: 2px solid #fdab0c;
-  overflow-y: auto; /* scroll if sidebar content overflows */
-  z-index: 10;
+
+  #menu-toggle {
+    display: block;
   }
 
-/* Main content scrolls */
-.wiki-main {
-  position: absolute;
-  top: 0;
-  left: 260px; /* sidebar width */
-  right: 0;
-  bottom: 0;
-  padding: 40px 50px;
-  background-color: rgba(20, 20, 20, 0.8);
-  overflow-y: auto; /* enable scrolling */
-  z-index: 10;
+  .wiki-sidebar {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    height: 100%;
+    transition: left 0.3s ease;
+    z-index: 9998;
   }
+
+  .wiki-sidebar.open {
+    left: 0;
+  }
+
+  .wiki-main {
+    position: static;
+    padding: 1rem;
+    margin-left: 0;
+  }
+
+  .wiki-table {
+    display: block;
+    overflow-x: auto;
+    font-size: 0.9rem;
+  }
+
   .wiki-table tbody td.title {
     white-space: normal;
+  }
+
+  .faq-item {
+    padding: 15px;
+  }
+
+  .faq-item h3 {
+    font-size: 1rem;
+  }
+
+  .faq-item p {
+    font-size: 0.9rem;
   }
 }
