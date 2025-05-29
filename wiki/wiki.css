@@ -231,6 +231,7 @@ canvas#dust {
     position: static;
     padding: 1rem;
     margin-left: 0;
+    overflow-y: auto; /* enable scrolling */
   }
 
   .wiki-table {
