@@ -12,7 +12,7 @@
 }
 body {
   font-family: 'Montserrat', sans-serif;
-  background: var(--bg-dark) url('images/background.jpg') no-repeat center center fixed;
+  background: var(--bg-dark) url('../images/background.jpg') no-repeat center center fixed;
   background-size: cover;
   color: var(--text-light);
 
