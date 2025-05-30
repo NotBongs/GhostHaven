@@ -111,17 +111,6 @@ window.addEventListener("DOMContentLoaded", () => {
   // setInterval(fetchServerStatus, 30000); // Optional refresh every 30s
 });
 
-document.addEventListener("DOMContentLoaded", function () {
-  const toggleButton = document.getElementById("menu-toggle");
-  const sidebar = document.querySelector(".wiki-sidebar");
-
-  if (toggleButton && sidebar) {
-    toggleButton.addEventListener("click", function () {
-      sidebar.classList.toggle("open");
-    });
-  }
-});
-
 // Particles
 const canvas = document.getElementById("dust");
 const ctx = canvas.getContext("2d");
