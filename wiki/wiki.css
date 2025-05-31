@@ -180,6 +180,7 @@ canvas#dust {
   flex-direction: column;
   gap: 15px;
   z-index: 10;
+  align-items: flex-start;
   text-align: left;
 }
 .faq-item {
