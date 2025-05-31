@@ -203,6 +203,7 @@ canvas#dust {
   font-size: 1rem;
   line-height: 1.5;
   z-index: 10;
+  text-align: left;
 }
 
 /* ===== Responsive ===== */
