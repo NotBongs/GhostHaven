@@ -80,7 +80,7 @@ window.addEventListener('DOMContentLoaded', () => {
 });
 
 async function fetchServerStatus() {
-  const ip = "vexius.org"; // Replace with your actual IP/domain
+  const ip = "mc.ghosthaven.net"; // Replace with your actual IP/domain
   const url = `https://api.mcsrvstat.us/2/${ip}`;
 
   try {
