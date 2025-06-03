@@ -14,7 +14,7 @@ function copyIP(btn) {
 }
 
 function DiscordLink() {
-  window.open("https://discord.gg/wQGTfudGeP", "_blank", "noopener,noreferrer");
+  window.open("https://ghosthaven.net/discord", "_blank", "noopener,noreferrer");
 }
 
 function goToWiki() {
