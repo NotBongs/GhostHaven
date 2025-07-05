@@ -1,8 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <script>
+    const path = window.location.pathname;
+    const lowerPath = path.toLowerCase();
+    if (path !== lowerPath) {
+      window.location.replace(lowerPath);
+    }
+  </script>
   <meta charset="UTF-8" />
-  <meta http-equiv="Refresh" content="2; URL='https://discord.gg/YSwkyyj2Mt'" />
+  <meta http-equiv="refresh" content="2; URL='https://discord.gg/YSwkyyj2Mt'" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Redirecting to Discord...</title>
   <link rel="stylesheet" href="/style.css" />
