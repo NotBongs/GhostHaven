@@ -2,10 +2,12 @@
 <html lang="en">
 <head>
   <script>
-    const path = window.location.pathname;
-    const lowerPath = path.toLowerCase();
-    if (path !== lowerPath) {
-      window.location.replace(lowerPath);
+    const url = new URL(window.location.href);
+    let pathname = url.pathname.toLowerCase();
+    if (!pathname.endsWith('/')) pathname += '/';
+    const normalizedUrl = `${url.origin}${pathname}${url.search}${url.hash}`;
+    if (window.location.href !== normalizedUrl) {
+      window.location.replace(normalizedUrl);
     }
   </script>
   <meta charset="UTF-8" />
