@@ -4,18 +4,24 @@ const wikiData = {
     { title: "/spawn", description: "Teleports You To Spawn" },
     { title: "/warp", description: "Shows A List Of Warps You Can Use" },
     { title: "/back", description: "Teleports You To Your Last Location" },
+    { title: "/survival", description: "Teleports You To Your Last Location In The Survival World" },
+    { title: "/tpa", description: "Request Teleport To Player" },
+    { title: "/tpaccept", description: "Accepts A Players Teleport Request" },
     { title: "/sethome", description: "Sets Your Home To The Location You're Standing At" },
+    { title: "/delhome", description: "Deletes Your Home" },
     { title: "/kit", description: "Shows A List Of Kits You Can Redeem" },
     { title: "/balance", description: "Checks Your Bank Balance" },
     { title: "/sb", description: "Toggles Scoreboard Visibility" },
     { title: "/uc menu", description: "Opens Cosmetic Menu" },
-    { title: "/jobs browse", description: "Browse The Jobs Menu" },
+    { title: "/jobs", description: "Browse The Jobs Menu" },
     { title: "/tags", description: "Opens The Chat Tags Menu" },
+    { title: "/sellall hand", description: "Sells Whatever You Are Holding" },
     { title: "/ah", description: "View The Auction House" },
-    { title: "/ah sell [value]", description: "Put The Item In Your Hand On The Auction House. Value Can Be Changed To Anything You Want." },
+    { title: "/ah sell <value>", description: "Put The Item In Your Hand On The Auction House. Value Can Be Changed To Anything You Want." },
     { title: "/gsit", description: "Shows Animations/Emotes You Can Use" },
     { title: "/rtp", description: "Teleports You To A Random Location" },
-    { title: "/rewards", description: "Opens Daily Rewards Menu" }
+    { title: "/rewards", description: "Opens Daily Rewards Menu" },
+    { title: "/msg", description: "Private Message A Player" }
 
   ],
   mobs: [
@@ -72,8 +78,7 @@ const wikiData = {
     { title: "Player Shops", description: "Create and manage your own shops." }
   ],
   items: [
-    { title: "Thunder Blade", description: "Summons lightning on hit." },
-    { title: "Shadow Cloak", description: "Grants temporary invisibility." }
+    { title: "N/A", description: "N/A" }
   ],
   faq: [
     { question: "How do I claim land?", answer: "Use the /claim command while holding a golden shovel." },
