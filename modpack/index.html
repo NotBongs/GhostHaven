@@ -1,1 +1,28 @@
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script>
+    const url = new URL(window.location.href);
+    let pathname = url.pathname.toLowerCase();
+    if (!pathname.endsWith('/')) pathname += '/';
+    const normalizedUrl = `${url.origin}${pathname}${url.search}${url.hash}`;
+    if (window.location.href !== normalizedUrl) {
+      window.location.replace(normalizedUrl);
+    }
+  </script>
+  <meta charset="UTF-8" />
+  <meta http-equiv="refresh" content="2; URL='https://github.com/NotBongs/GhostHaven/releases/latest/download/GhostHaven.zip'" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Downloading Modpack...</title>
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+  <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100vh; text-align: center;">
+    <h1 style="color: var(--accent-start); font-family: 'Orbitron', sans-serif;">Downloading Modpack...</h1>
+    <p style="color: var(--text-muted); font-size: 1.2rem;">
+      Your download should start automatically. If not,
+      <a href="https://github.com/NotBongs/GhostHaven/releases/latest/download/GhostHaven.zip" style="color: var(--accent-end); font-weight: bold;">click here</a>.
+    </p>
+  </div>
+</body>
+</html>
