@@ -21,7 +21,10 @@ const wikiData = {
     { title: "/gsit", description: "Shows Animations/Emotes You Can Use" },
     { title: "/rtp", description: "Teleports You To A Random Location" },
     { title: "/rewards", description: "Opens Daily Rewards Menu" },
-    { title: "/msg", description: "Private Message A Player" }
+    { title: "/msg", description: "Private Message A Player" },
+    { title: "/enchanter", description: "Purchase Enchantment Books To Reveal True Enchantments" },
+    { title: "/tinkerer", description: "Trade Enchanted Armor For Experience, Or Enchant Books For Dust" },
+    { title: "/alchemist", description: "Combine Dusts For A Better Success Rate, Or Combine Two Enchant Books To Upgrade Their Level" }
 
   ],
   mobs: [
